@@ -1,3 +1,7 @@
+/*
+ * Version : 0.0.3
+ * Author : Marek Sonnabend
+ */
 'use strict';
 
 var bmiModule = angular.module('bmiModule', [

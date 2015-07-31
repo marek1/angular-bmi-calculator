@@ -1,16 +1,25 @@
 # BMI Calculator Module
 
-I *suggest* you create a folder named forked_components (same directory as bower_components) where you keep (and change) this module.
-   
-To clone the current version : 
+To retrieve the component use bower. Thus, include this in your bower.json
 
-    git clone git@git.xx-well.local:welldoo-angular-modules/welldoo-bmi-calculator.git
+    "dependencies": {
+        ...
+        "bmi-calculator" : "git@github.com:marek1/angular-bmi-calculator.git#x.x.x"
+        ...
+    }
+
+NOTE : Change the version (x.x.x) accordingly.
+
+Then run 
+
+    bower install
+    
 
 To use in your project load the minified JS like so : 
 
-    <script src="YOUR_PATH_TO_BMI_CALCULATOR/dist/bmi-calculator.min.js"></script>
+    <script src="BOWER_PATH/bmi-calculator/dist/bmi-calculator.min.js"></script>
 
-NOTE : replace YOUR_PATH_TO_BMI_CALCULATOR with the correct path.
+NOTE : replace BOWER_PATH/bmi-calculator with the correct path.
 
 To load the module in your app load the module as follows : 
 
@@ -58,16 +67,16 @@ It a two-way data binding, which means that the object is kept up-to-date.
 
 JS : 
 
-    <script src="YOUR_PATH_TO_BMI_CALCULATOR/forked_components/angularjs-slider/dist/rzslider.min.js"></script>
+    <script src="BOWER_PATH/bmi-calculator/forked_components/angularjs-slider/dist/rzslider.min.js"></script>
 
-NOTE : replace YOUR_PATH_TO_BMI_CALCULATOR with the correct path.
+NOTE : replace BOWER_PATH/bmi-calculator with the correct path.
 
  CSS : 
 
     
-    <link rel="stylesheet" href="YOUR_PATH_TO_BMI_CALCULATOR/forked_components/angularjs-slider/dist/rzslider.css" />
+    <link rel="stylesheet" href="BOWER_PATH/bmi-calculator/forked_components/angularjs-slider/dist/rzslider.css" />
 
-NOTE : replace YOUR_PATH_TO_BMI_CALCULATOR with the correct path.
+NOTE : replace BOWER_PATH/bmi-calculator with the correct path.
 
 and annotate it : 
 
@@ -76,7 +85,7 @@ and annotate it :
       'rzModule'
     ])
 
-To see an example app go to YOUR_PATH_TO_BMI_CALCULATOR and run 
+To see an example app go to BOWER_PATH/bmi-calculator and run 
 
     gulp
 
