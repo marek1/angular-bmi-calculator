@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="bmi-calculator.css" />
+    <link rel="stylesheet" href="forked_components/angularjs-slider_modified/dist/rzslider.css" />
+
+</head>
+<body data-ng-app="exampleApp">
+<div data-ng-controller="MainController as main">
+    <h1>BMI-Controller</h1>
+    <p>Explanation below*</p>
+    <h3>Non-Graphical</h3>
+    <hr/>
+    <bmi-calculator data-user-data="main.userData" data-display-type=""></bmi-calculator>
+    <hr/>
+    <h3>Graphical</h3>
+    <hr/>
+    <bmi-calculator data-user-data="main.userData" data-display-type="graphical"></bmi-calculator>
+    <hr/>
+    <p>*Explanation : </p>
+    <h3>Controller</h3>
+    <pre>
+    controller('MainController', function() {
+        this.userData = {
+          height: {
+            m : 0,
+            cm: 180,
+            ft: 0,
+            in: 0
+          },
+          weight: {
+            kg: 75,
+            g : 0,
+            st: 0,
+            lb: 0
+          },
+          unit : 'metric',
+          bmi : 0
+        };
+    });
+    </pre>
+    <h3>Template</h3>
+    <pre>
+        &lt;div data-ng-controller="MainController as main"&gt;
+
+        &lt;bmi-calculator data-user-data="main.userData" data-display-type=""&gt; &lt;/bmi-calculator&gt;
+
+        &lt;bmi-calculator data-user-data="main.userData" data-display-type="graphical"&gt; &lt;/bmi-calculator&gt;
+
+        &lt;/div&gt;
+    </pre>
+
+</div>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="forked_components/angularjs-slider_modified/dist/rzslider.min.js"></script>
+<script src="dist/bmi-calculator.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

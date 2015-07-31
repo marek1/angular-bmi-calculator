@@ -1,0 +1,64 @@
+<div class="bmi-calculator">
+  <select data-ng-model="ctrl.userData.unit">
+    <option value="metric">Metric</option>
+    <option value="imperial">Imperial</option>
+  </select>
+  <div data-ng-show="ctrl.userData.unit==='metric'">
+    <form name="bmiform.metric">
+      <div class="input-group">
+        <input type="text" id="m" name="m" data-ng-show="metricHeight==='m'" data-ng-model="ctrl.userData.height.m" data-ng-change="changedValue('height', 'm')">
+        <input type="text" id="cm" name="cm" data-ng-show="metricHeight==='cm'" data-ng-model="ctrl.userData.height.cm" data-ng-change="changedValue('height', 'cm')">
+        <select data-ng-model="metricHeight">
+          <option value="cm">cm</option>
+          <option value="m">m</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="g" name="g" data-ng-show="metricWeight==='g'" data-ng-model="ctrl.userData.weight.g" data-ng-change="changedValue('weight', 'g')" required>
+        <input type="text" id="kg" name="kg" data-ng-show="metricWeight==='kg'" data-ng-model="ctrl.userData.weight.kg" data-ng-change="changedValue('weight', 'kg')" required>
+        <select data-ng-model="metricWeight">
+          <option value="kg">kg</option>
+          <option value="g">g</option>
+        </select>
+      </div>
+
+    </form>
+    <div data-ng-show="ctrl.displayType==='graphical'">
+      <rzslider rz-slider-unit="cm" rz-slider-unit-type="height" rz-slider-floor="30" rz-slider-ceil="300" rz-slider-model="ctrl.userData.height.cm" rz-slider-translate="translate.cm"></rzslider>
+      <rzslider rz-slider-unit="kg" rz-slider-unit-type="weight" rz-slider-floor="30" rz-slider-ceil="500" rz-slider-model="ctrl.userData.weight.kg" rz-slider-translate="translate.kg"></rzslider>
+    </div>
+    <div>
+      <b>MY BMI is : {{ctrl.userData.bmi}}</b>
+    </div>
+  </div>
+  <div data-ng-show="ctrl.userData.unit==='imperial'">
+    <form name="bmiform.imperial">
+      <div class="input-group">
+          <label for="ft">ft</label>
+          <input type="text" id="ft" name="ft" data-ng-model="ctrl.userData.height.ft" data-ng-change="changedValue('height', 'ft')">
+      </div>
+      <div class="input-group">
+          <label for="in">in</label>
+          <input type="text" id="in" name="in" min=0" max="12" data-ng-model="ctrl.userData.height.in" data-ng-change="changedValue('height', 'in')">
+      </div>
+      <div class="input-group">
+        <label for="st">st</label>
+          <input type="text" id="st" name="st" data-ng-model="ctrl.userData.weight.st" data-ng-change="changedValue( 'weight', 'st')">
+      </div>
+      <div class="input-group">
+        <label for="lb">lb</label>
+          <input type="text" id="lb" name="lb" min=0" max="14"  data-ng-model="ctrl.userData.weight.lb" data-ng-change="changedValue('weight', 'lb')">
+      </div>
+    </form>
+    <div data-ng-show="ctrl.displayType==='graphical'">
+      <rzslider rz-slider-unit="ft" rz-slider-unit-type="height" rz-slider-floor="1" rz-slider-ceil="10" rz-slider-model="ctrl.userData.height.ft" rz-slider-translate="translate.ft"></rzslider>
+      <rzslider rz-slider-unit="in" rz-slider-unit-type="height" rz-slider-floor="1" rz-slider-ceil="12" rz-slider-model="ctrl.userData.height.in" rz-slider-translate="translate.in"></rzslider>
+      <rzslider rz-slider-unit="st" rz-slider-unit-type="weight" rz-slider-floor="1" rz-slider-ceil="80" rz-slider-model="ctrl.userData.weight.st" rz-slider-translate="translate.st"></rzslider>
+      <rzslider rz-slider-unit="lb" rz-slider-unit-type="weight" rz-slider-floor="1" rz-slider-ceil="14" rz-slider-model="ctrl.userData.weight.lb" rz-slider-translate="translate.lb"></rzslider>
+    </div>
+    <div>
+      <b>MY BMI is : {{ctrl.userData.bmi}}</b>
+    </div>
+  </div>
+</div>
