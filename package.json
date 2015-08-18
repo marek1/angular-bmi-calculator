@@ -1,6 +1,6 @@
 {
   "name": "angular-bmi-calculator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A BMI Calculator for Angular.js",
   "main": "dist/bmi-calculator.min.js",
   "devDependencies": {
