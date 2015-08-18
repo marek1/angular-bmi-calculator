@@ -1,7 +1,7 @@
 {
   "name": "angular-bmi-calculator",
   "main": "dist/bmi-calculator.min.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "marek1 <cyclingfellas@gmail.com>"
   ],
